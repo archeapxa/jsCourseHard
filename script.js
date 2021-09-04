@@ -1,3 +1,4 @@
+/*
 let num = 266219; // начальная переменная
 
 let numbers = num.toString().split('').map(Number); 
@@ -10,3 +11,38 @@ console.log(output); // вывод итогов умножения
 let outputExponent = output ** 3; // возведение в третью степерь
 
 console.log(String(outputExponent).substr(0 , 2)); //преобразую в текст, обрезаю два знака
+*/
+
+//первое задание
+let days = {
+  ru: "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье",
+  en: "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+};
+
+let lang = prompt("Введите ключ");
+
+// first
+if (lang === "ru") {
+  console.log(days.ru);
+} else {
+  console.log(days.en);
+}
+// second
+switch (lang) {
+  case "ru":
+    console.log(days.ru);
+    break;
+  default:
+    console.log(days.en);
+    break;
+}
+//third
+console.log(days[lang]);
+
+//второе задание
+let namePerson = prompt("Имя?");
+namePerson === "Артем"
+  ? console.log("Директор")
+  : namePerson === "Максим"
+  ? console.log("Преподаватель")
+  : "Студент";
