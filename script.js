@@ -12,7 +12,7 @@ let outputExponent = output ** 3; // возведение в третью сте
 
 console.log(String(outputExponent).substr(0 , 2)); //преобразую в текст, обрезаю два знака
 */
-
+/*
 //первое задание
 let days = {
   ru: "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье",
@@ -46,3 +46,19 @@ namePerson === "Артем"
   : namePerson === "Максим"
   ? console.log("Преподаватель")
   : "Студент";
+*/
+
+const check = function (str) {
+  if (typeof str !== "string") {
+    alert("Введен не текст!");
+  } else {
+    let strTrimmed = str.trim();
+    if (strTrimmed.length > 30) {
+      return strTrimmed.slice(0, 29) + "...";
+    } else {
+      return strTrimmed;
+    }
+  }
+};
+
+console.log(check(prompt("Введите строку")));
