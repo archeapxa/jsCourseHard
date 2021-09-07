@@ -47,7 +47,7 @@ namePerson === "Артем"
   ? console.log("Преподаватель")
   : "Студент";
 */
-
+/*
 const check = function (str) {
   if (typeof str !== "string") {
     alert("Введен не текст!");
@@ -62,3 +62,29 @@ const check = function (str) {
 };
 
 console.log(check(prompt("Введите строку")));
+*/
+
+// первое задание
+const arr = [123, 2352, 2432, 745, 4213, 546, 72];
+
+for (let i = 0; i < arr.length; i++) {
+  const element = arr[i];
+  if (
+    element.toString().charAt(0) === "2" ||
+    element.toString().charAt(0) === "4"
+  ) {
+    console.log(element);
+  }
+}
+
+//второе задание
+for (let index = 1; index <= 100; index++) {
+  let whole = true;
+  for (let num = 2; num < index; num++) {
+    if (index % num == 0) {
+      whole = false;
+      break;
+    }
+  }
+  if (whole) console.log(index, "Делители этого числа: 1 и ", index);
+}
