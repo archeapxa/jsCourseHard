@@ -1,3 +1,4 @@
+"use strict";
 /*
 let num = 266219; // начальная переменная
 
@@ -63,7 +64,7 @@ const check = function (str) {
 
 console.log(check(prompt("Введите строку")));
 */
-
+/*
 // первое задание
 const arr = [123, 2352, 2432, 745, 4213, 546, 72];
 
@@ -88,3 +89,4 @@ for (let index = 1; index <= 100; index++) {
   }
   if (whole) console.log(index, "Делители этого числа: 1 и ", index);
 }
+*/
