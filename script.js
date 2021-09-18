@@ -90,3 +90,33 @@ for (let index = 1; index <= 100; index++) {
   if (whole) console.log(index, "Делители этого числа: 1 и ", index);
 }
 */
+
+let date = new Date();
+let today = date.getDay();
+console.log(today);
+
+let days = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье",
+];
+
+days.forEach((element, index) => {
+  if (index === 5 || index === 6) {
+    if (index === today - 1 || index === today + 6) {
+      console.log("%c" + element, "font-weight:bold");
+    } else {
+      console.log("%c" + element, "font-style: italic");
+    }
+  } else {
+    if (index === today - 1) {
+      console.log("%c" + element, "font-weight:bold");
+    } else {
+      console.log(element);
+    }
+  }
+});
