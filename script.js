@@ -178,3 +178,76 @@ for (let index = 1; index <= 100; index++) {
 //     main.innerHTML += item + "<br>";
 //   }
 // });
+
+const days = [
+  "Воскресенье",
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+];
+const months = [
+  "Января",
+  "Февраля",
+  "Марта",
+  "Апреля",
+  "Мая",
+  "Июня",
+  "Июля",
+  "Августа",
+  "Сентября",
+  "Октября",
+  "Ноября",
+  "Декабря",
+];
+const options = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  weekday: "long",
+  timezone: "Europe/Kiev",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+};
+
+let now = new Date();
+
+function getNoun(number, one, two, five) {
+  let n = number % 20;
+  if (n >= 5 && n <= 20) {
+    return five;
+  }
+  n = number % 10;
+  if (n === 1) {
+    return one;
+  }
+  if (n >= 2 && n <= 4) {
+    return two;
+  }
+  return five;
+}
+
+console.log(
+  "Сегодня " +
+    days[now.getDay()] +
+    ", " +
+    now.getDate() +
+    " " +
+    months[now.getMonth()] +
+    " " +
+    now.getFullYear() +
+    " года, " +
+    now.getHours() +
+    getNoun(now.getHours, " час", " часа", " часов") +
+    " " +
+    now.getMinutes() +
+    getNoun(now.getMinutes, " минута", " минуты", " минут") +
+    " " +
+    now.getSeconds() +
+    getNoun(now.getSeconds, " секунда", " секунды", " секунд")
+);
+
+// console.log(getNoun(31, " секунда", " секунды", " секунд"));
