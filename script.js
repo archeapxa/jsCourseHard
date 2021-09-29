@@ -91,32 +91,90 @@ for (let index = 1; index <= 100; index++) {
 }
 */
 
-let date = new Date();
-let today = date.getDay();
-console.log(today);
+// let date = new Date();
+// let today = date.getDay() - 1;
+// let body = document.querySelector("body");
+// console.log(today);
 
-let days = [
-  "Понедельник",
-  "Вторник",
-  "Среда",
-  "Четверг",
-  "Пятница",
-  "Суббота",
-  "Воскресенье",
-];
+// let days = [
+//   "Понедельник",
+//   "Вторник",
+//   "Среда",
+//   "Четверг",
+//   "Пятница",
+//   "Суббота",
+//   "Воскресенье",
+// ];
 
-days.forEach((element, index) => {
-  if (index === 5 || index === 6) {
-    if (index === today - 1 || index === today + 6) {
-      console.log("%c" + element, "font-weight:bold");
-    } else {
-      console.log("%c" + element, "font-style: italic");
-    }
-  } else {
-    if (index === today - 1) {
-      console.log("%c" + element, "font-weight:bold");
-    } else {
-      console.log(element);
-    }
-  }
-});
+// let todayDay = days.findIndex;
+
+// days.forEach((element, index) => {
+//   if (element === "Суббота" || element === "Воскресенье") {
+//     if (index === days.findIndex) document.write(`<p><b>${element}</b></p>`);
+//   } else {
+//     document.write(`<p>${element}</p>`);
+//   }
+// });
+
+// days.forEach((element, index) => {
+//   if (element === "Суббота" || element === "Воскресенье") {
+//     if (index === today - 1 || index === today + 6) {
+//       console.log("%c" + element, "font-weight:bold");
+//     } else {
+//       console.log("%c" + element, "font-style: italic");
+//     }
+//   } else {
+//     if (index === today - 1) {
+//       console.log("%c" + element, "font-weight:bold");
+//     } else {
+//       console.log(element);
+//     }
+//   }
+// });
+
+// // Вариант №2
+// let week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
+//   toDay = new Date().getDay() - 1;
+
+// for (let i = 0; i < week.length; i++) {
+//   if (i == toDay) {
+//     if (week[i] == "сб" || week[i] == "вс") {
+//       document.write(`<p><b><i>${week[i]}</i></b></p>`);
+//     } else {
+//       document.write(`<p><b>${week[i]}</b></p>`);
+//     }
+//   } else if (week[i] == "сб" || week[i] == "вс") {
+//     document.write(`<p><b>${week[i]}</b></p>`);
+//   } else {
+//     document.write(`<p>${week[i]}</p>`);
+//   }
+// }
+// console.log(toDay);
+
+// let main = document.querySelector("body");
+
+// let week = [
+//   "Понедельник",
+//   "Вторник",
+//   "Среда",
+//   "Четверг",
+//   "Пятница",
+//   "Суббота",
+//   "Воскресенье",
+// ];
+
+// let date = new Date().getDay();
+
+// week.forEach(function (item, index) {
+//   if (index === date) {
+//     if (item === "Суббота" || item === "Воскресенье") {
+//       main.innerHTML += item.italics().bold() + "<br>";
+//     } else {
+//       main.innerHTML += item.bold() + "<br>";
+//     }
+//   } else if (item === "Суббота" || item === "Воскресенье") {
+//     main.innerHTML += item.italics() + "<br>";
+//   } else {
+//     main.innerHTML += item + "<br>";
+//   }
+// });
