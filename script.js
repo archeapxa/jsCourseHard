@@ -213,8 +213,6 @@ const options = {
   second: "2-digit",
 };
 
-let now = new Date();
-
 function getNoun(number, one, two, five) {
   let n = number;
   if (number >= 5 && number <= 20) {
@@ -230,24 +228,50 @@ function getNoun(number, one, two, five) {
   return five;
 }
 
-console.log(
-  "Сегодня " +
-    days[now.getDay()] +
-    ", " +
-    now.getDate() +
-    " " +
-    months[now.getMonth()] +
-    " " +
-    now.getFullYear() +
-    " года, " +
-    now.getHours() +
-    getNoun(now.getHours, " час", " часа", " часов") +
-    " " +
-    now.getMinutes() +
-    getNoun(now.getMinutes, " минута", " минуты", " минут") +
-    " " +
-    now.getSeconds() +
-    getNoun(now.getSeconds, " секунда", " секунды", " секунд")
-);
+function getZero(num) {
+  if (num > 0 && num < 10) {
+    return "0" + num;
+  } else {
+    return num;
+  }
+}
 
-console.log(getNoun(now.getSeconds(), " секунда", " секунды", " секунд"));
+function time() {
+  console.clear();
+  let now = new Date();
+  console.log(
+    "Сегодня " +
+      days[now.getDay()] +
+      ", " +
+      now.getDate() +
+      " " +
+      months[now.getMonth()] +
+      " " +
+      now.getFullYear() +
+      " года, " +
+      now.getHours() +
+      getNoun(now.getHours(), " час", " часа", " часов") +
+      " " +
+      now.getMinutes() +
+      getNoun(now.getMinutes(), " минута", " минуты", " минут") +
+      " " +
+      now.getSeconds() +
+      getNoun(now.getSeconds(), " секунда", " секунды", " секунд")
+  );
+
+  console.log(
+    getZero(now.getDate()) +
+      "." +
+      getZero(now.getMonth() + 1) +
+      "." +
+      now.getFullYear() +
+      " - " +
+      now.getHours() +
+      ":" +
+      now.getMinutes() +
+      ":" +
+      now.getSeconds()
+  );
+}
+
+setInterval(() => time(), 1000);
