@@ -216,8 +216,8 @@ const options = {
 let now = new Date();
 
 function getNoun(number, one, two, five) {
-  let n = number % 20;
-  if (n >= 5 && n <= 20) {
+  let n = number;
+  if (number >= 5 && number <= 20) {
     return five;
   }
   n = number % 10;
@@ -250,4 +250,4 @@ console.log(
     getNoun(now.getSeconds, " секунда", " секунды", " секунд")
 );
 
-// console.log(getNoun(31, " секунда", " секунды", " секунд"));
+console.log(getNoun(now.getSeconds(), " секунда", " секунды", " секунд"));
