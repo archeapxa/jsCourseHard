@@ -1,180 +1,33 @@
-"use strict";
-/*
-let num = 266219; // начальная переменная
+const adv = document.querySelector(".adv");
+// const body = document.querySelector("body");
+const books = document.querySelector(".books");
+const bookList = document.querySelectorAll(".book");
+const book2List = bookList[0].querySelectorAll("li");
+const book5List = bookList[5].querySelectorAll("li");
+const book6List = bookList[2].querySelectorAll("li");
 
-let numbers = num.toString().split('').map(Number); 
-// переход переменной в текст, разделение каждого символа текста в массив, преобразование элементов массива в число
+console.log(bookList);
+console.log(book6List);
 
-let output = numbers.reduce((t , a) => t * a); // умножение через reduce 
+books.prepend(bookList[1]);
+books.append(bookList[2]);
+bookList[4].after(bookList[3]); //1 пункт
 
-console.log(output); // вывод итогов умножения
-  
-let outputExponent = output ** 3; // возведение в третью степерь
+document.body.style.backgroundImage = "url(image/you-dont-know-js.jpg)"; // 2 пункт
 
-console.log(String(outputExponent).substr(0 , 2)); //преобразую в текст, обрезаю два знака
-*/
-/*
-//первое задание
-let days = {
-  ru: "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье",
-  en: "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
-};
+bookList[4].querySelector("h2 a").textContent =
+  "Книга 3. this и Прототипы Объектов"; // 3 пункт
 
-let lang = prompt("Введите ключ");
+adv.remove(); // 4 пункт
 
-// first
-if (lang === "ru") {
-  console.log(days.ru);
-} else {
-  console.log(days.en);
-}
-// second
-switch (lang) {
-  case "ru":
-    console.log(days.ru);
-    break;
-  default:
-    console.log(days.en);
-    break;
-}
-//third
-console.log(days[lang]);
+book2List[9].after(book2List[2]);
+book2List[9].before(book2List[7]);
+book2List[8].after(book2List[4], book2List[5]);
 
-//второе задание
-let namePerson = prompt("Имя?");
-namePerson === "Артем"
-  ? console.log("Директор")
-  : namePerson === "Максим"
-  ? console.log("Преподаватель")
-  : "Студент";
-*/
-/*
-const check = function (str) {
-  if (typeof str !== "string") {
-    alert("Введен не текст!");
-  } else {
-    let strTrimmed = str.trim();
-    if (strTrimmed.length > 30) {
-      return strTrimmed.slice(0, 29) + "...";
-    } else {
-      return strTrimmed;
-    }
-  }
-};
+book5List[10].before(book5List[5], book5List[8]);
+book5List[1].after(book5List[9]);
+book5List[4].after(book5List[2]); //5 пункт
 
-console.log(check(prompt("Введите строку")));
-*/
-/*
-// первое задание
-const arr = [123, 2352, 2432, 745, 4213, 546, 72];
-
-for (let i = 0; i < arr.length; i++) {
-  const element = arr[i];
-  if (
-    element.toString().charAt(0) === "2" ||
-    element.toString().charAt(0) === "4"
-  ) {
-    console.log(element);
-  }
-}
-
-//второе задание
-for (let index = 1; index <= 100; index++) {
-  let whole = true;
-  for (let num = 2; num < index; num++) {
-    if (index % num == 0) {
-      whole = false;
-      break;
-    }
-  }
-  if (whole) console.log(index, "Делители этого числа: 1 и ", index);
-}
-*/
-
-// let date = new Date();
-// let today = date.getDay() - 1;
-// let body = document.querySelector("body");
-// console.log(today);
-
-// let days = [
-//   "Понедельник",
-//   "Вторник",
-//   "Среда",
-//   "Четверг",
-//   "Пятница",
-//   "Суббота",
-//   "Воскресенье",
-// ];
-
-// let todayDay = days.findIndex;
-
-// days.forEach((element, index) => {
-//   if (element === "Суббота" || element === "Воскресенье") {
-//     if (index === days.findIndex) document.write(`<p><b>${element}</b></p>`);
-//   } else {
-//     document.write(`<p>${element}</p>`);
-//   }
-// });
-
-// days.forEach((element, index) => {
-//   if (element === "Суббота" || element === "Воскресенье") {
-//     if (index === today - 1 || index === today + 6) {
-//       console.log("%c" + element, "font-weight:bold");
-//     } else {
-//       console.log("%c" + element, "font-style: italic");
-//     }
-//   } else {
-//     if (index === today - 1) {
-//       console.log("%c" + element, "font-weight:bold");
-//     } else {
-//       console.log(element);
-//     }
-//   }
-// });
-
-// // Вариант №2
-// let week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
-//   toDay = new Date().getDay() - 1;
-
-// for (let i = 0; i < week.length; i++) {
-//   if (i == toDay) {
-//     if (week[i] == "сб" || week[i] == "вс") {
-//       document.write(`<p><b><i>${week[i]}</i></b></p>`);
-//     } else {
-//       document.write(`<p><b>${week[i]}</b></p>`);
-//     }
-//   } else if (week[i] == "сб" || week[i] == "вс") {
-//     document.write(`<p><b>${week[i]}</b></p>`);
-//   } else {
-//     document.write(`<p>${week[i]}</p>`);
-//   }
-// }
-// console.log(toDay);
-
-// let main = document.querySelector("body");
-
-// let week = [
-//   "Понедельник",
-//   "Вторник",
-//   "Среда",
-//   "Четверг",
-//   "Пятница",
-//   "Суббота",
-//   "Воскресенье",
-// ];
-
-// let date = new Date().getDay();
-
-// week.forEach(function (item, index) {
-//   if (index === date) {
-//     if (item === "Суббота" || item === "Воскресенье") {
-//       main.innerHTML += item.italics().bold() + "<br>";
-//     } else {
-//       main.innerHTML += item.bold() + "<br>";
-//     }
-//   } else if (item === "Суббота" || item === "Воскресенье") {
-//     main.innerHTML += item.italics() + "<br>";
-//   } else {
-//     main.innerHTML += item + "<br>";
-//   }
-// });
+book6List[8].after(
+  (document.createElement("li").textContent = "Глава 8: За пределами ES6")
+); // 6 пункт
